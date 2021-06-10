@@ -20,8 +20,15 @@ export class Content extends LitElement {
 export class Grid extends LitElement {
   static styles = css`
     .grid {
-      grid-area: auto;
+      display: grid;
+      grid-template-columns: auto auto;
       gap: 16px;
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: auto;
+      }
     }
   `
 
