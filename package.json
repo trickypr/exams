@@ -1,0 +1,20 @@
+{
+  "name": "exams",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel serve ./src/index.html ./src/ui/components.html",
+    "build": "parcel build ./src/index.html ./src/ui/components.html"
+  },
+  "repository": "https://github.com/trickypr/exams.git",
+  "author": "trickypr <trickypr@icloud.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@parcel/transformer-typescript-tsc": "^2.0.0-nightly.716",
+    "ts-lit-plugin": "^1.2.1"
+  },
+  "dependencies": {
+    "lit": "^2.0.0-rc.2",
+    "parcel": "^2.0.0-beta.3.1"
+  }
+}
