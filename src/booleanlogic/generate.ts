@@ -53,18 +53,28 @@ new Array(saCount).fill(0).forEach(() => {
       break
 
     case NumberTypes.Or:
+      question += `A ⋁ B `
+      answer +=  `${A} ⋁ ${B} = ${A || B}`
       break
 
     case NumberTypes.Not:
+      question += `ㄱA and ㄱB `
+      answer +=  `ㄱ${A} = ${!A}<br>ㄱ${B} = ${!B}` 
       break
 
     case NumberTypes.XOR:
+      question += `A ⊕ B `
+      answer += `${A} ⊕ ${B} = ${A ? !B : B}`
       break
 
     case NumberTypes.NOR:
+      question += `ㄱ(A ⋁ B) `
+      answer += `ㄱ(${A} ⋁ ${B}) = ${!(A || B)}`
       break
 
     case NumberTypes.NAND:
+      question += `ㄱ(A ∧ B) `
+      answer += `ㄱ(${A} ∧ ${B}) = ${!(A && B)}`
       break
   }
 
@@ -82,46 +92,3 @@ new Array(saCount).fill(0).forEach(() => {
     sael.innerHTML += '<ui-spacer height="64px"></ui-spacer>'
   }
 })
-
-// Now generate a single long answer question
-
-const number1 = random.int(1, 128)
-const number2 = random.int(1, 128)
-
-let question = 'Add or subtract '
-let answer = '<ui-color-secondary>'
-
-switch (random.int(0, 1)) {
-  case LongAnswerTypes.Addition:
-    question += `0${number1.toString(2).padStart(7, '0')} and 0${number2
-      .toString(2)
-      .padStart(7, '0')}`
-
-    answer += `${number1.toString(2).padStart(7, '0')} + ${number2
-      .toString(2)
-      .padStart(7, '0')} = `
-    answer += (number1 + number2).toString(2).padStart(8, '0')
-    break
-
-  case LongAnswerTypes.Subtraction:
-    question += `0${number1.toString(2).padStart(7, '0')} and 1${number2
-      .toString(2)
-      .padStart(7, '0')}`
-
-    answer += `${number1} - ${number2} = `
-    answer += (number1 - number2).toString(2).padStart(8, '0')
-    break
-}
-
-answer += '</ui-color-secondary>'
-
-const qP = document.createElement('p')
-qP.innerText = question
-
-sael.appendChild(qP)
-
-if (showAnswer) {
-  sael.innerHTML += answer
-} else {
-  sael.innerHTML += '<ui-spacer height="64px"></ui-spacer>'
-}
