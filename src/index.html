@@ -16,6 +16,22 @@
     <script src="./ui/index.ts"></script>
   </head>
   <body>
-    <ui-content></ui-content>
+    <ui-content>
+      <h1>Computer science exam prep</h1>
+
+      <ui-grid>
+        <ui-card
+          header="Bases other than 10"
+          text="Bases other than 10 are used all of the time in computer science as computers operate in binary. 3 and 4 bit binary numbers are better represented in octal and hex than decimal"
+        >
+          <ui-float-right>
+            <ui-button type="text" link="/bo10/test.html">Test</ui-button>
+            <ui-button type="text">Learn</ui-button>
+          </ui-float-right>
+        </ui-card>
+      </ui-grid>
+
+      <pattern-footer />
+    </ui-content>
   </body>
 </html>

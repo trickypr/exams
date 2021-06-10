@@ -9,7 +9,7 @@ export class Card extends LitElement {
       border-radius: 4px;
 
       padding: 16px;
-      width: max-content;
+      width: fit-content;
     }
 
     h1 {
