@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam preparation</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../ui/index.css" />
+    <script src="../../ui/index.ts"></script>
+  </head>
+  <body>
+    <template id="questionTemplate">
+      <h2 id="questionText"><slot name="question">NEEDS QUESTION</slot></h2>
+      <input type="number" name="Answer" id="answer" />
+      <div id="correctAnswer" style="display: none; color: red">
+        <slot name="answer"></slot>
+      </div>
+      <button id="submitAnswer">Next</button>
+    </template>
+
+    <ui-content>
+      <div class="page" id="start">
+        <h1>Short math quiz</h1>
+        <ui-button type="primary" id="start-test">Start</ui-button>
+      </div>
+
+      <div class="page" id="question"></div>
+
+      <pattern-footer />
+    </ui-content>
+
+    <script src="./generate.ts"></script>
+  </body>
+</html>

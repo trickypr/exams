@@ -2,8 +2,8 @@
   "name": "exams",
   "version": "1.0.0",
   "scripts": {
-    "dev": "parcel serve ./src/index.html ./src/ui/components.html ./src/bo10/test.html ./src/booleanlogic/test.html",
-    "build": "parcel build ./src/index.html ./src/ui/components.html ./src/bo10/test.html ./src/booleanlogic/test.html"
+    "dev": "parcel serve ./src/index.html ./src/ui/components.html ./src/bo10/test.html ./src/booleanlogic/test.html ./src/ast/math/test.html",
+    "build": "parcel build ./src/index.html ./src/ui/components.html ./src/bo10/test.html ./src/booleanlogic/test.html ./src/ast/math/test.html"
   },
   "repository": "https://github.com/trickypr/exams.git",
   "author": "trickypr <trickypr@icloud.com>",
