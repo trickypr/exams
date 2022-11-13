@@ -2,14 +2,15 @@
   "name": "exams",
   "version": "1.0.0",
   "scripts": {
-    "dev": "parcel serve ./src/index.html ./src/ui/components.html ./src/bo10/test.html ./src/bo10/learn.html ./src/booleanlogic/test.html ./src/ast/math/test.html",
-    "build": "parcel build ./src/index.html ./src/ui/components.html ./src/bo10/test.html ./src/bo10/learn.html ./src/booleanlogic/test.html ./src/ast/math/test.html"
+    "dev": "parcel serve ./src/robots.txt ./src/index.html ./src/ui/components.html ./src/bo10/test.html ./src/bo10/learn.html ./src/booleanlogic/test.html ./src/ast/math/test.html",
+    "build": "parcel build ./src/robots.txt ./src/index.html ./src/ui/components.html ./src/bo10/test.html ./src/bo10/learn.html ./src/booleanlogic/test.html ./src/ast/math/test.html"
   },
   "repository": "https://github.com/trickypr/exams.git",
   "author": "trickypr <trickypr@icloud.com>",
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "@parcel/transformer-raw": "^2.8.0",
     "@parcel/transformer-typescript-tsc": "^2.8.0",
     "@types/seedrandom": "^3.0.0",
     "parcel": "^2.8.0",

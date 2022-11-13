@@ -31,7 +31,7 @@ export class HeaderTest extends LitElement {
     return html`<nav>
       <ui-button type="text" link="/">Home</ui-button>
       <ui-button
-        type="text"
+        type="primary"
         link="./test.html?v=${Number(params.get('v') || '0') + 1}"
         >New test</ui-button
       >
@@ -46,6 +46,24 @@ export class HeaderTest extends LitElement {
         ) != 'true'}"
         style="float:right;"
         >Show / hide answers</ui-button
+      >
+    </nav>`
+  }
+}
+
+@customElement('pattern-learn-header')
+export class HeaderLearn extends LitElement {
+  static styles = css`
+    nav {
+      padding: 16px;
+    }
+  `
+
+  render() {
+    return html`<nav>
+      <ui-button type="text" link="/">Home</ui-button>
+      <ui-button type="text" link="./test.html" style="float:right;"
+        >Test</ui-button
       >
     </nav>`
   }

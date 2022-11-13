@@ -12,6 +12,7 @@ export class Button extends LitElement {
       padding: 8px 10px;
       border-radius: 4px;
       transition-duration: 0.2s;
+      cursor: pointer;
     }
 
     .btn.primary {
@@ -44,12 +45,14 @@ export class Button extends LitElement {
   link?: string
 
   render() {
-    return html`<button
-      class="btn ${this.type}"
-      @click=${() => {
-        if (this.link) window.location.href = this.link
-      }}
-    >
+    if (this.link) {
+      return html`<a href="${this.link}"
+        ><button class="btn ${this.type}">
+          <slot></slot></button
+      ></a>`
+    }
+
+    return html`<button class="btn ${this.type}">
       <slot></slot>
     </button>`
   }

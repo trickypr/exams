@@ -26,8 +26,11 @@ export class Card extends LitElement {
   @property()
   text?: string
 
+  @property()
+  customStyle?: string
+
   render() {
-    return html`<div class="card">
+    return html`<div class="card" style="${this.customStyle || ''}">
       ${this.header && html`<h1>${this.header}</h1>`}
       ${this.text && html`<p>${this.text}</p>`}
       <slot></slot>

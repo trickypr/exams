@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn how to convert to and from bases other than 10, some basic addition, then test your knowledge"
+    />
+    <title>Bases other than 10 test</title>
+
+    <link rel="stylesheet" href="../ui/index.css" />
+    <script type="module" src="../ui/index.ts"></script>
+  </head>
+  <body>
+    <ui-content>
+      <pattern-learn-header></pattern-learn-header>
+
+      <h1>Bases other than 10</h1>
+
+      <p>Learning outcomes</p>
+      <ul>
+        <li>Converting to and from binary</li>
+        <li>Converting to and from octal</li>
+        <li>Converting to and from hexadecimal</li>
+        <li>Adding and subtracting binary numbers</li>
+      </ul>
+
+      <h2>Binary</h2>
+
+      <h3>Converting to binary</h3>
+
+      <p>
+        Consider the number $19$. If we want to convert it to binary, we want to
+        find the largest power of two ($2^x$). In this case, that is $2^4 = 16$.
+        We can use this to construct a table of values for all of the powers of
+        2 from $2^4$ to $2^0$.
+      </p>
+
+      <table>
+        <tr>
+          <th>Power of 2 ($x$)</th>
+          <td>4</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>$2^x$</th>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>Fits in</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <p>
+        From here, we can see that we can remove $16$ (leaving $3$), which we
+        will note as a $1$ in the first column of the last row. We can repeat
+        this process. Neither $8$ nor $4$ fit in $3$, so write $0$ in their
+        columns. $2$ and $1$ fits in, so we write $1$ in their columns. Now we
+        have this table:
+      </p>
+
+      <table>
+        <tr>
+          <th>Power of 2 ($x$)</th>
+          <td>4</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>$2^x$</th>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>Fits in</th>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </table>
+
+      <p>
+        If we read that from left to right, we will get the binary
+        representation, $10011$.
+      </p>
+
+      <h3>Converting from binary</h3>
+
+      <p>
+        Converting from binary back to decimal is significantly simpler.
+        Consider the table we created before:
+      </p>
+
+      <table>
+        <tr>
+          <th>Power of 2 ($x$)</th>
+          <td>4</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>$2^x$</th>
+          <td>16</td>
+          <td>8</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>Fits in</th>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </table>
+
+      <p>
+        The bottom number in <i>Fits in</i> depicts the number of times the base
+        ($2^x$) can fit into the number. To convert it back, we can simply
+        multiply each number by the base, and add them all together.
+      </p>
+
+      $$16 \times 1 + 8 \times 0 + 4 \times 0 + 2 \times 1 + 1 \times 1 = 19$$
+
+      <h2>Octal</h2>
+
+      <h3>Converting to octal</h3>
+
+      <p>
+        The process of converting to octal is very similar to converting to
+        binary. Again, we want to find the largest number that matches $8^x$.
+        Taking the examples from before, we can see that $8^1 = 8$ is the
+        largest number that fits in $19$. We can construct a table of values for
+        all of the powers of 8 from $8^1$ to $8^0$.
+      </p>
+
+      <table>
+        <tr>
+          <th>Power of 8 ($x$)</th>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>$8^x$</th>
+          <td>8</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>Fits in</th>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <p>
+        Note that the largest multiple of $8$ that fits into $19$ is $16$. So,
+        we need to note the multiplier in the first column, which is $2$. This
+        leaves a remainder of $3$, which is a multiple of $1$, so we should also
+        note it.
+      </p>
+
+      <table>
+        <tr>
+          <th>Power of 8 ($x$)</th>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>$8^x$</th>
+          <td>8</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>Fits in</th>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+      </table>
+
+      <h3>Converting from Octal</h3>
+
+      <p>
+        To convert from octal to decimal, we can simply multiply each number by
+        $8^x$ and add them together.
+      </p>
+
+      $$8 \times 2 + 1 \times 3 = 19$$
+
+      <h2>Hexadecimal</h2>
+
+      <p>
+        Hexadecimal are converted in the same way that octal numbers are
+        converted. The only difference is that the base is $16$ instead of $8$.
+      </p>
+
+      <h2>Binary addition and subtraction</h2>
+
+      <p>TODO</p>
+
+      <ui-card customStyle="width: 100%">
+        <p style="margin-top: 0">
+          Now that you have finished learning, it is time to start practicing.
+        </p>
+
+        <ui-button link="./test.html">Test your skills</ui-button>
+      </ui-card>
+
+      <pattern-footer></pattern-footer>
+    </ui-content>
+
+    <!-- Script for rendering math code. MathML does not seem to be standardized yet :( -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+        },
+      }
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </body>
+</html>
