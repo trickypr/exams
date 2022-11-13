@@ -28,7 +28,7 @@ export class HeaderTest extends LitElement {
   render() {
     const params = new URLSearchParams(location.search)
 
-    return html` <nav>
+    return html`<nav>
       <ui-button type="text" link="/">Home</ui-button>
       <ui-button
         type="text"
