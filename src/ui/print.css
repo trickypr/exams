@@ -1,0 +1,10 @@
+/* Elements flagged as interactive or that are implicitly interactive should
+   not be visible. */
+pattern-test-header, pattern-learn-header, .interactive {
+    display: none;
+}
+
+p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
